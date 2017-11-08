@@ -7,7 +7,7 @@ class ReservationsController < ApplicationController
   end
 
   def take
-    book.take(current_user) if book.can_take?(current_user)
+    ::ReservationsHandler.new(current_user).take(book)
     redirect_to(book_path(book.id))
   end
 

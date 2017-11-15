@@ -3,6 +3,8 @@ class GoogleBooksController < ApplicationController
     render json: volume_info.to_json
   end
 
+  def index; end
+
   private
 
   def volume_info
